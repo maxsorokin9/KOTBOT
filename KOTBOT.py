@@ -19,7 +19,7 @@ def start(message):
         user, "Мяу... Ты тоже хочешь фото котика?", reply_markup=markup
         )
 
-#создание кнопки командной строки
+#создание кнопки командной строки, бот будет выдавать рандомные файлы из папки, начинающиеся с 'cat'
 @bot.message_handler(regexp='Получить')
 def send_picture(message):
     user = message.chat.id
