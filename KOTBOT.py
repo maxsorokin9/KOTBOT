@@ -19,7 +19,7 @@ markup.row(item)
 def start(message):
     user = message.chat.id
     bot.send_message(
-        user, "Мяу... Ты тоже хочешь фото котика?", reply_markup=markup
+        user, "Хочешь фото котика?", reply_markup=markup
         )
 
 #ответ на запрос по кнопке, бот будет выдавать рандомные файлы из папки, начинающиеся с 'cat'
