@@ -3,7 +3,7 @@ from random import choice
 from telebot import apihelper, types
 
 import telebot
-
+#инициируем самого бота
 apihelper.proxy = {'https': 'socks5://learn:python@t2.learn.python.ru:1080'}
 bot = telebot.TeleBot("1289356561:AAFFY7K5sG4leLErxmIfR5HRk2dy51vMbV8")
 
@@ -11,7 +11,7 @@ markup = types.ReplyKeyboardMarkup(row_width=1)
 item = types.KeyboardButton('Получить')
 markup.row(item)
 
-
+#начало общения в боте
 @bot.message_handler(commands=['start'])
 def start(message):
     user = message.chat.id
@@ -19,7 +19,7 @@ def start(message):
         user, "Мяу... Ты тоже хочешь фото котика?", reply_markup=markup
         )
 
-
+#создание кнопки командной строки
 @bot.message_handler(regexp='Получить')
 def send_picture(message):
     user = message.chat.id
