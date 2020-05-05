@@ -1,3 +1,4 @@
+#все требуемые библиотеки для самого бота, создания кнопки и выдачи рандоных файлов
 from glob import glob
 from random import choice
 from telebot import apihelper, types
@@ -7,6 +8,8 @@ import telebot
 apihelper.proxy = {'https': 'socks5://learn:python@t2.learn.python.ru:1080'}
 bot = telebot.TeleBot("1289356561:AAFFY7K5sG4leLErxmIfR5HRk2dy51vMbV8")
 
+
+#создаем кнопку командной строки
 markup = types.ReplyKeyboardMarkup(row_width=1)
 item = types.KeyboardButton('Получить')
 markup.row(item)
@@ -19,7 +22,7 @@ def start(message):
         user, "Мяу... Ты тоже хочешь фото котика?", reply_markup=markup
         )
 
-#создание кнопки командной строки, бот будет выдавать рандомные файлы из папки, начинающиеся с 'cat'
+#ответ на запрос по кнопке, бот будет выдавать рандомные файлы из папки, начинающиеся с 'cat'
 @bot.message_handler(regexp='Получить')
 def send_picture(message):
     user = message.chat.id
